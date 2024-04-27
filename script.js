@@ -28,5 +28,9 @@ function getHumanChoice() {
         return(prompt("Rock, Paper, Scissors?"))     // returns prompt if misspelling or entry
     }
 
-}console.log(getHumanChoice().toLowerCase());
-             
+}//console.log(getHumanChoice().toLowerCase());
+
+//Declare humanScore and computerScore in global scope
+humanScore = 0;
+computerScore= 0;
+ console.log(computerScore);            
