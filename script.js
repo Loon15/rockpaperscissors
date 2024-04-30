@@ -39,15 +39,17 @@ let computerScore= 0;
 function playRound(playerChoice, computerChoice){
     playerChoice = playerChoice.toLowerCase();
     computerChoice = computerChoice.toLowerCase();
+    
 //WINNING SECTION
     if(playerChoice === "rock" && computerChoice === "scissors"){
         return ("You win! Computer chose paper");
     
     }else if(playerChoice === "paper" && computerChoice === "rock"){
-    return ("You win! Computer choce rock");
+    return ("You win! Computer chose rock");
 
     }else if(playerChoice === "scissors" && computerChoice === "paper"){
      return ("You win! Computer chose paper");
+     
 //LOSING SECTION
     }else if(playerChoice === "rock" && computerChoice === "paper"){
         return ("You lose! Computer chose paper");
@@ -63,11 +65,36 @@ function playRound(playerChoice, computerChoice){
     }
 
 }
+
+function playGame(){
+    for(let i = 0; i < 5; i++){                       //plays the game for 5 rounds-
     const playerSelection = getHumanChoice();
     const computerSelection = getComputerChoice();
+    const roundResult = playRound(playerSelection, computerSelection);
+    console.log(roundResult);
 
+    if(roundResult.includes("You win!")){         // adds score to player
+        humanScore++;
+    
 
-    console.log(playRound(playerSelection, computerSelection));
+    }else if(roundResult.includes("You lose!")){  // adds score to cpu
+        computerScore++;
+    }
+}
+    console.log("-------");
+    console.log("GAME SET!");
+    if(humanScore > computerScore){
+        console.log("You Win! Computer has been defeated!!");                 //console logs whomever is the winner/tie
+
+    }else if(humanScore < computerScore){
+        console.log("You lost! The Computer has won..try again?");
+
+    }else{
+        console.log("TIE GAME!");
+    }
+}
+
+playGame();  // calls playGame so 5 rounds begin
 
    
    
