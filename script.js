@@ -79,6 +79,8 @@ rockButton.addEventListener('click', () => {
     const result = playRound(playerChoice, computerChoice);
     //console.log(playRound(playerChoice, computerChoice));
     results.textContent = result;
+    results.style.marginTop = "20px";
+    rockButton.style.cssText = "color: white; background: firebrick;"
 });
 
 paperButton.addEventListener('click', () => {
@@ -87,6 +89,8 @@ paperButton.addEventListener('click', () => {
     const result = playRound(playerChoice, computerChoice);
     //console.log(playRound(playerChoice, computerChoice));
     results.textContent = result;
+    results.style.marginTop = "20px";
+    paperButton.style.cssText = "color: firebrick; background: white;"
 });
 
 scissorButton.addEventListener('click', () => {
@@ -95,6 +99,7 @@ scissorButton.addEventListener('click', () => {
     const result = playRound(playerChoice, computerChoice);
     //console.log(playRound(playerChoice, computerChoice))
     results.textContent = result;
+    scissorButton.style.cssText = "color: white; background: firebrick;"
 });
 
 
