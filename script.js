@@ -36,6 +36,7 @@ let computerScore= 0;
 //console.log(computerScore);
 
 
+
 function playRound(playerChoice, computerChoice){
     playerChoice = playerChoice.toLowerCase();
     computerChoice = computerChoice.toLowerCase();
@@ -66,35 +67,67 @@ function playRound(playerChoice, computerChoice){
 
 }
 
-function playGame(){
-    for(let i = 0; i < 5; i++){                       //plays the game for 5 rounds-
-    const playerSelection = getHumanChoice();
-    const computerSelection = getComputerChoice();
-    const roundResult = playRound(playerSelection, computerSelection);
-    console.log(roundResult);
+const rockButton = document.querySelector("#btn1");
+const paperButton = document.querySelector("#btn2");
+const scissorButton = document.querySelector("#btn3");
+const results = document.querySelector("#results");
 
-    if(roundResult.includes("You win!")){         // adds score to player
-        humanScore++;
+
+rockButton.addEventListener('click', () => {
+    const playerChoice = "ROCK";
+    const computerChoice = getComputerChoice();
+    const result = playRound(playerChoice, computerChoice);
+    //console.log(playRound(playerChoice, computerChoice));
+    results.textContent = result;
+});
+
+paperButton.addEventListener('click', () => {
+    const playerChoice = "PAPER";
+    const computerChoice = getComputerChoice();
+    const result = playRound(playerChoice, computerChoice);
+    //console.log(playRound(playerChoice, computerChoice));
+    results.textContent = result;
+});
+
+scissorButton.addEventListener('click', () => {
+    const playerChoice = "SCISSORS";
+    const computerChoice = getComputerChoice();
+    const result = playRound(playerChoice, computerChoice);
+    //console.log(playRound(playerChoice, computerChoice))
+    results.textContent = result;
+});
+
+
+
+// function playGame(){
+//     for(let i = 0; i < 5; i++){                       //plays the game for 5 rounds-
+//     const playerSelection = getHumanChoice();
+//     const computerSelection = getComputerChoice();
+//     const roundResult = playRound(playerSelection, computerSelection);
+//     console.log(roundResult);
+
+//     if(roundResult.includes("You win!")){         // adds score to player
+//         humanScore++;
     
 
-    }else if(roundResult.includes("You lose!")){  // adds score to cpu
-        computerScore++;
-    }
-}
-    console.log("-------");
-    console.log("GAME SET!");
-    if(humanScore > computerScore){
-        console.log("You Win! Computer has been defeated!!");                 //console logs whomever is the winner/tie
+//     }else if(roundResult.includes("You lose!")){  // adds score to cpu
+//         computerScore++;
+//     }
+// }
+//     console.log("-------");
+//     console.log("GAME SET!");
+//     if(humanScore > computerScore){
+//         console.log("You Win! Computer has been defeated!!");                 //console logs whomever is the winner/tie
 
-    }else if(humanScore < computerScore){
-        console.log("You lost! The Computer has won..try again?");
+//     }else if(humanScore < computerScore){
+//         console.log("You lost! The Computer has won..try again?");
 
-    }else{
-        console.log("TIE GAME!");
-    }
-}
+//     }else{
+//         console.log("TIE GAME!");
+//     }
+// }
 
-playGame();  // calls playGame so 5 rounds begin
+// playGame();  // calls playGame so 5 rounds begin
 
    
    
