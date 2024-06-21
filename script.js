@@ -33,8 +33,13 @@ function getHumanChoice() {
 //Declare humanScore and computerScore in global scope
 let humanScore = 0;
 let computerScore = 0;
+const humanScoreDisplay = document.getElementById("humanScore");
+const computerScoreDisplay = document.getElementById("computerScore");
 //console.log(computerScore);
-
+function updateScoreDisplay(){
+    humanScoreDisplay.textContent = humanScore;
+    computerScoreDisplay.textContent = computerScore;
+}
 
 
 function playRound(playerChoice, computerChoice){
@@ -82,8 +87,12 @@ function playRound(playerChoice, computerChoice){
             roundResult += `\nComputer won the game!`;
         }
     }
+    updateScoreDisplay();
     return roundResult;
+    
 }
+
+updateScoreDisplay();
     
 
 const rockButton = document.querySelector("#btn1");
